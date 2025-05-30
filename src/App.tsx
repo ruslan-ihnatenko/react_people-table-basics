@@ -1,39 +1,13 @@
-import { Routes, Route, NavLink, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import './App.scss';
 import { HomePage } from './pages/HomePage/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { PeoplePage } from './pages/PeoplePage/PeoplePage';
+import { Navbar } from './components/Navbar/Navbar';
 
 export const App = () => (
   <div data-cy="app">
-    <nav
-      data-cy="nav"
-      className="navbar is-fixed-top has-shadow"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div className="container">
-        <div className="navbar-brand">
-          <NavLink
-            className={({ isActive }) =>
-              `navbar-item ${isActive ? 'has-background-grey-lighter' : ''}`
-            }
-            to="/"
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) =>
-              `navbar-item ${isActive ? 'has-background-grey-lighter' : ''}`
-            }
-            to="/people"
-          >
-            People
-          </NavLink>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
 
     <main className="section">
       <div className="container">
